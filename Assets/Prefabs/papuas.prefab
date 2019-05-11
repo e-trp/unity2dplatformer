@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2187088921832603790}
   m_LocalRotation: {x: -0, y: -0.99326205, z: -0, w: -0.11589001}
-  m_LocalPosition: {x: 1.204, y: 0.013, z: 0.326}
+  m_LocalPosition: {x: 0.8, y: 0.028, z: 0.23}
   m_LocalScale: {x: 1.1250001, y: 0.62992126, z: 1.0000001}
   m_Children: []
   m_Father: {fileID: 8401916192840990106}
@@ -171,10 +171,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -192,6 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4eea7e7382bbc468af97563e33ead8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  enemySpeed: 1
   groundDetection: {fileID: 5855568417911293679}
-  distance: 10
+  distance: 0.9

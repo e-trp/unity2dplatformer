@@ -5,41 +5,58 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
-    public float speed;
+    public float enemySpeed;
     public Transform groundDetection;
     public float distance;
-    private bool movingRight = true;
     private Rigidbody2D rb2d;
-    
-    
-    
+    private Vector2 direction;
+    private RaycastHit2D groundInfo;
+    private RaycastHit2D ceilingCheck;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        direction = Vector2.left;
       
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb2d.velocity = Vector2.right * speed;
+        rb2d.velocity = direction * enemySpeed;
 
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
-
-        if (groundInfo.collider == false)
+        groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
+        ceilingCheck = Physics2D.Raycast(groundDetection.position, Vector2.up, distance);
+     
+        if (groundInfo.collider == true)
         {
-            if (movingRight == true)
+            Debug.Log(groundInfo.collider.name);
+            if (groundInfo.collider.tag != "Ground" || ceilingCheck.collider == true)
             {
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                movingRight = false;
+                changeDirection();
             }
-            else
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
 
-            }
         }
+
+        else
+        {
+            changeDirection();
+
+
+        }
+
+    }
+
+    protected void changeDirection()
+    {
+        
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+        direction = direction * -1;
+
     }
 }

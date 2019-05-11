@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Heart
   - Potion
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Background
   - Player
   - Enemy
-  - 
+  - Ground
   - 
   - 
   - 
