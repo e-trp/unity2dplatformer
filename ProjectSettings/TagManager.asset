@@ -8,6 +8,7 @@ TagManager:
   - Heart
   - Potion
   - Ground
+  - GridBox
   layers:
   - Default
   - TransparentFX
@@ -47,6 +48,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2184943805
+    locked: 0
+  - name: Grid
+    uniqueID: 446179721
     locked: 0
   - name: Frontground
     uniqueID: 1854556573

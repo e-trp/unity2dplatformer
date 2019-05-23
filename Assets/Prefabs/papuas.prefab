@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2187088921832603790}
   m_LocalRotation: {x: -0, y: -0.99326205, z: -0, w: -0.11589001}
   m_LocalPosition: {x: 0.8, y: 0.028, z: 0.23}
-  m_LocalScale: {x: 1.1250001, y: 0.62992126, z: 1.0000001}
+  m_LocalScale: {x: 1.1250001, y: 0.62992126, z: 1}
   m_Children: []
   m_Father: {fileID: 8401916192840990106}
   m_RootOrder: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8401916192840990100}
   - component: {fileID: 8401916192840990104}
   - component: {fileID: 8401916192840990105}
-  - component: {fileID: 8005973428965847757}
+  - component: {fileID: 6271094202074134201}
   m_Layer: 10
   m_Name: papuas
   m_TagString: Enemy
@@ -180,7 +180,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8005973428965847757
+--- !u!114 &6271094202074134201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

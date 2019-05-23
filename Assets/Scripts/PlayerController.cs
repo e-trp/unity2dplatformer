@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 10f;
+    public float jumpTakeOffSpeed = 10f;
     bool facingRight = true;
     Animator anim;
     Rigidbody2D rb2d;
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     float groundRadius = 0.1f;
     public LayerMask whatIsGround;
-    public float jumpForce = 10f;
+
 
     public int numOfHearts;
     public int health;
@@ -59,11 +60,18 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("mainmenu", LoadSceneMode.Single);
         }
 
-        if (grounded && Input.GetButtonDown("Jump"))
+
+        if (Input.GetButtonDown("Jump") && grounded)
         {
-            Debug.Log("Player jump");
-            anim.SetBool("Ground", false);
-            rb2d.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            rb2d.velocity =  new Vector2 (rb2d.velocity.x, jumpTakeOffSpeed);
+        }
+
+        else if (Input.GetButtonUp("Jump"))
+        {
+            if (rb2d.velocity.y > 0)
+            {
+                rb2d.velocity = new Vector2 (rb2d.velocity.x, rb2d.velocity.y * 0.5f);
+            }
         }
 
         if (Input.GetButtonDown("Fire3"))

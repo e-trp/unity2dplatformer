@@ -33,7 +33,6 @@ public class EnemyController : MonoBehaviour
      
         if (groundInfo.collider == true)
         {
-            Debug.Log(groundInfo.collider.name);
             if (groundInfo.collider.tag != "Ground" || ceilingCheck.collider == true)
             {
                 changeDirection();
@@ -44,8 +43,6 @@ public class EnemyController : MonoBehaviour
         else
         {
             changeDirection();
-
-
         }
 
     }
